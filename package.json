@@ -1,0 +1,28 @@
+{
+  "name": "ch.10-html-generateteam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asummers7/Ch.10-HTML-GenerateTeam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asummers7/Ch.10-HTML-GenerateTeam/issues"
+  },
+  "homepage": "https://github.com/asummers7/Ch.10-HTML-GenerateTeam#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^29.4.3"
+  }
+}
