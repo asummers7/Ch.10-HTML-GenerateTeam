@@ -67,7 +67,7 @@ describe ('Manager', () => {
       </div>`
 
         const manager = new Manager(obj1.name, obj1.id, obj1.email, obj1.officeNumber);
-        const html = manager.generateHTML();
+        const html = manager.managerHTML();
 
         expect(html).toEqual(div);
 
