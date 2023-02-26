@@ -1,12 +1,7 @@
 const Employee = require("../lib/Employee");
+const fs = require('fs');
 
 function generateCards(teamList) {
-  //expect array
-  let cardHtml = "";
-
-  teamList.forEach((employee) => {
-    cardHtml += employee.generateHtml();
-  });
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -18,16 +13,23 @@ function generateCards(teamList) {
     <title>Document</title>
 </head>
 <header>
-    <div class="jumbotron">
+    <div class="jumbotron text-center bg-danger p-3">
     <h1 class="display-4">My Team</h1>
     </div>
 </header>
 <body>
-    ${cardHtml}
+  <div class="d-flex flex-row justify-content-center">
+    ${teamList}
+  </div>
 </body>
 </html>`;
 }
 
-function writeFile(TeamList) {}
+function writeFile(TeamList) {
+  fs.writeFile('index.html', TeamList, (error) => error ? console.error(error) : console.log("success"))
+}
 
-module.exports = writeFile;
+module.exports = {
+  generateCards,
+  writeFile
+}
