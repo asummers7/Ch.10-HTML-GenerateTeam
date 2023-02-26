@@ -6,9 +6,6 @@
 This is designed to get the student familiar with running test with the npm package jest. It is also an introduction into the world of Object Oriented Programming. This challenge is to be ran in the terminal. The functionality is then to create a HTML file with cards of generated employees that are either a Engineer, Manager, or Intern.
 
 ## Table of Contents
-- [Ch.10-HTML-GenerateTeam](#ch10-html-generateteam)
-  - [Description](#description)
-  - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
   - [License](#license)
