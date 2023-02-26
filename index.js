@@ -125,8 +125,7 @@ inquirer.prompt(employee()).then(function(responses){
             intern();
             break;  
         case 'none':
-            let joined = teamList.join('')
-            let layout = generateCards(joined);
+            let layout = generateCards(teamList);
             writeFile(layout);
             break;
     }

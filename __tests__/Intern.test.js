@@ -55,7 +55,7 @@ describe ('Intern', () => {
 
     it('should create a new card with Intern values', () => {
         const div = `<div class="card" style="width: 18rem;">
-        <div class="card-body">
+        <div class="card-body p-3 mb-2 bg-success text-white">
           <h5 class="card-title">Alec</h5>
           <p class="card-text">Intern</p>
         </div>

@@ -2,7 +2,7 @@ const Employee = require("../lib/Employee");
 const fs = require('fs');
 
 function generateCards(teamList) {
-
+  const joined = teamList.join("")
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +19,7 @@ function generateCards(teamList) {
 </header>
 <body>
   <div class="d-flex flex-row justify-content-center">
-    ${teamList}
+    ${joined}
   </div>
 </body>
 </html>`;
