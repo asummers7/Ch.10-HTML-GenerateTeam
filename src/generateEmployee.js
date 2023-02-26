@@ -1,29 +1,33 @@
-const Employee = require("../lib/Employee")
+const Employee = require("../lib/Employee");
 
-function generateCards (teamList)  {
-//expect array 
-var cardHtml = ''
+function generateCards(teamList) {
+  //expect array
+  let cardHtml = "";
 
-teamList.forEach((employee)=> {
-    cardHtml += employee.generateHtml(); 
-})
+  teamList.forEach((employee) => {
+    cardHtml += employee.generateHtml();
+  });
 
-return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
 </head>
+<header>
+    <div class="jumbotron">
+    <h1 class="display-4">My Team</h1>
+    </div>
+</header>
 <body>
     ${cardHtml}
 </body>
-</html>`
+</html>`;
 }
 
-function writeFile(TeamList) {
-
-}
+function writeFile(TeamList) {}
 
 module.exports = writeFile;
