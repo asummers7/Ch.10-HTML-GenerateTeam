@@ -1,9 +1,13 @@
 const inquirer = require('inquirer');
+const Employee = require('./lib/Employee');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+const Manager = require('./lib/Manager')
 //import writeFIle
 const questions = {
     employee: [ {
         type: 'list',
-        name: 'employeeType',
+        name: 'status',
         message: 'Which type of Employee would you like to add?',
         choices: [
             'Manager', 'Engineer', 'Intern', 'none'
@@ -61,21 +65,43 @@ const questions = {
         message: 'What University do you attend?'
     }]
 }
-
 const teamList = []
-function newEmployee () {
-    inquirer.prompt(questions.employee).then(function(responses){
-        let {employeeType} = responses
-        if (employeeType === 'none') {
-            return //callwriteFile(teamList) 
-        }
-        inquirer.prompt(questions[employeeType])
-        .then(function(responses) {
-            const employee = new `${employeeType}`(responses); 
-            console.log('employee :>> ', employee);
-        })
-        //teamlist.push(new Manager())
+
+function employee () {
+    return questions.employee; 
+}
+function manager() {
+    return inquirer.prompt(questions.Manager).then(function(responses){
+        const manager = new Manager(responses.name, responses.id, responses.email, responses.officeNumber);
+        teamList.push(manager.managerHTML());
+        console.log('teamList :>> ', teamList);
+    })
+}
+function intern() {
+    return inquirer.prompt(questions.Intern).then(function(responses){
+        const intern = new Intern(responses.name, responses.id, responses.email, responses.officeNumber);
+        teamList.push(intern.internHTML());
+    })
+}
+function engineer() {
+    return inquirer.prompt(questions.Engineer).then(function(responses){
+        const engineer = new Engineer(responses.name, responses.id, responses.email, responses.github);
+        teamList.push(manager.managerHTML());
     })
 }
 
-newEmployee()
+inquirer.prompt(employee()).then(function(responses){
+    switch(responses.status) {
+        case 'Manager':
+            manager();
+            break;
+        case 'Engineer':
+            engineer();
+            break;
+        case 'Intern':
+            intern();
+            break;  
+        case 'none':
+            break;
+    }
+});
